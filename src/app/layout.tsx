@@ -3,6 +3,7 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { fetchGlobal } from "@/lib/api";
+import { ErrorMessage } from "@/components/error-message";
 
 const roboto = Roboto({
   weight: 'variable',
@@ -21,6 +22,9 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
 
   try {
     globalData = await fetchGlobal();
+    if (!globalData) {
+      throw new Error("Global data is undefined or null");
+    }
   } catch (error) {
     console.error("Error:", error);
     hasError = true;
@@ -30,13 +34,13 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
     <html lang="en">
       <body className={`${roboto.variable} antialiased`}>
         {hasError ? (
-          <div className="flex items-center justify-center">
-            <h1 className="text-2xl font-bold text-red-600">Error loading global data</h1>
-          </div>
+          <ErrorMessage message="Error loading global data" />
         ) : (
-          <Navbar globalData={globalData} />
+          <>
+            {/* {globalData && <Navbar globalData={globalData} />} */}
+            {children}
+          </>
         )}
-        {children}
       </body>
     </html>
   );
