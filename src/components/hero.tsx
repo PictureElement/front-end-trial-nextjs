@@ -38,7 +38,6 @@ export function Hero({ homeData }: Props) {
             openLinkInNewTab={slide.cta.openLinkInNewTab}
             showIcon={slide.cta.showIcon}
             lucideIconName={slide.cta.lucideIconName}
-            className="border-5"
           />
         </SwiperSlide>
       ))}

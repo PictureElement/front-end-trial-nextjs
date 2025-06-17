@@ -21,12 +21,27 @@ export function BtnPrimary(props: LinkProps) {
       href={url}
       target={openLinkInNewTab ? "_blank" : "_self"}
       rel={openLinkInNewTab ? "noopener noreferrer" : undefined}
-      className={`bg-red-500 ${className ?? ""}`}
+      className={`
+        inline-flex
+        justify-center
+        items-center
+        px-[57px]
+        h-15
+        leading-none
+        rounded-full
+      text-black
+        transition
+      bg-primary
+        hover:brightness-90
+        focus:ring-4
+        focus:outline-none
+        ${className ?? ""}
+      `}
       {...rest}
     >
       {label}
       {showIcon && lucideIconName && (
-        <DynamicIcon name={lucideIconName} color="red" size={48} />
+        <DynamicIcon className="h-[1em] w-[1em] ms-1" name={lucideIconName} size={16} />
       )}
     </Link>
   );

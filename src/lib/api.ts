@@ -10,7 +10,6 @@ export async function fetchGlobal() {
   }
   const data = await response.json();
   const parsedData = globalDataSchema.safeParse(data);
-  console.log("Parsed global data:", parsedData);
   if (!parsedData.success) {
     throw new Error("Invalid global data format");
   }
