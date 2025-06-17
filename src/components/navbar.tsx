@@ -1,6 +1,8 @@
 "use client";
 
-export function Navbar() {
+import Link from "next/link";
+
+export function Navbar({ globalData }) {
   return (
     <nav className="grid grid-cols-5">
       <div className="border">
@@ -16,7 +18,9 @@ export function Navbar() {
         4
       </div>
       <div className="border">
-        5
+        <Link href={globalData.navbar.cta.url} target={globalData.navbar.cta.openLinkInNewTab ? "_blank" : "_self"}>
+          {globalData.navbar.cta.label}
+        </Link>
       </div>
     </nav>
   );
