@@ -9,9 +9,8 @@ export async function GET() {
           label: "Order Now",
           url: ".",
           openLinkInNewTab: false,
-          sameHostLink: true,
           showIcon: false,
-          lucideIconComponentName: "",
+          lucideIconName: "",
         },
         image: {
           alternativeText: "Slide 1",
@@ -26,11 +25,10 @@ export async function GET() {
         heading: "Custom, handcrafted kitchens tailored to your space",
         cta: {
           label: "Get Started",
-          url: ".",
-          openLinkInNewTab: false,
-          sameHostLink: true,
-          showIcon: false,
-          lucideIconComponentName: "",
+          url: "https://msof.me/",
+          openLinkInNewTab: true,
+          showIcon: true,
+          lucideIconName: "external-link",
         },
         image: {
           alternativeText: "Slide 2",

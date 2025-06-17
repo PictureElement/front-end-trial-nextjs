@@ -7,18 +7,16 @@ export async function GET() {
           label: "Shop",
           url: ".",
           openLinkInNewTab: false,
-          sameHostLink: true,
           showIcon: false,
-          lucideIconComponentName: "",
+          lucideIconName: "",
         },
         {
           id: 2,
           label: "Plan My Kitchen",
           url: ".",
           openLinkInNewTab: false,
-          sameHostLink: true,
           showIcon: false,
-          lucideIconComponentName: "",
+          lucideIconName: "",
         }
       ],
       rightMenu: [
@@ -27,18 +25,16 @@ export async function GET() {
           label: "About Us",
           url: ".",
           openLinkInNewTab: false,
-          sameHostLink: true,
           showIcon: false,
-          lucideIconComponentName: "",
+          lucideIconName: "",
         },
         {
           id: 2,
           label: "Gallery",
           url: ".",
           openLinkInNewTab: false,
-          sameHostLink: true,
           showIcon: false,
-          lucideIconComponentName: "",
+          lucideIconName: "",
         }
       ],
       cta: {
@@ -46,9 +42,8 @@ export async function GET() {
         label: "My Order",
         url: ".",
         openLinkInNewTab: false,
-        sameHostLink: true,
         showIcon: true,
-        lucideIconComponentName: "ShoppingCart",
+        lucideIconName: "ShoppingCart",
       }
     },
     siteRepresentation: {

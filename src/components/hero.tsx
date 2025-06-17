@@ -2,10 +2,10 @@
 
 import { z } from "zod/v4";
 import Image from "next/image";
-import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/css';
 import { homeDataSchema } from "@/lib/schemas";
+import { BtnPrimary } from "./btn-primary";
 
 type HomeData = z.infer<typeof homeDataSchema>;
 type Props = {
@@ -32,9 +32,14 @@ export function Hero({ homeData }: Props) {
             alt={slide.image.alternativeText}
             priority
           />
-          <Link href={slide.cta.url} target={slide.cta.openLinkInNewTab ? "_blank" : "_self"}>
-            {slide.cta.label}
-          </Link>
+          <BtnPrimary
+            label={slide.cta.label}
+            url={slide.cta.url}
+            openLinkInNewTab={slide.cta.openLinkInNewTab}
+            showIcon={slide.cta.showIcon}
+            lucideIconName={slide.cta.lucideIconName}
+            className="border-5"
+          />
         </SwiperSlide>
       ))}
     </Swiper>

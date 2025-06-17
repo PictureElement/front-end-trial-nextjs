@@ -1,5 +1,3 @@
-"use client";
-
 import { z } from "zod/v4";
 import { globalDataSchema } from "@/lib/schemas";
 import Link from "next/link";

@@ -1,12 +1,11 @@
 import { z } from "zod/v4";
 
-const linkSchema = z.object({
+export const linkSchema = z.object({
   label: z.string(),
   url: z.string(),
   openLinkInNewTab: z.boolean(),
-  sameHostLink: z.boolean(),
   showIcon: z.boolean(),
-  lucideIconComponentName: z.string(),
+  lucideIconName: z.string(),
 });
 
 const imageSchema = z.object({
