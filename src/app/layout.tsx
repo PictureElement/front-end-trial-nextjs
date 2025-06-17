@@ -22,7 +22,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
   try {
     globalData = await fetchGlobal();
   } catch (error) {
-    console.error("Error fetching global data:", error);
+    console.error("Error:", error);
     hasError = true;
   }
 

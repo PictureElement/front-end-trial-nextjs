@@ -1,6 +1,10 @@
 import { fetchHome } from "@/lib/api";
+import { z } from "zod/v4";
+import { heroItemSchema } from "@/lib/schemas";
 import Image from "next/image";
 import Link from "next/link";
+
+type heroItem = z.infer<typeof heroItemSchema>;
 
 export default async function Home() {
   let homeData;
@@ -9,7 +13,7 @@ export default async function Home() {
   try {
     homeData = await fetchHome();
   } catch (error) {
-    console.error("Error fetching home data:", error);
+    console.error("Error:", error);
     hasError = true;
   }
 
@@ -26,7 +30,7 @@ export default async function Home() {
         </div>
       ) : (
         <ul>
-          {hero.map((item) => (
+          {hero.map((item: heroItem) => (
             <li key={item.id} className="p-4 border-b">
               <p>{item.preheading}</p>
               <h2>{item.heading}</h2>

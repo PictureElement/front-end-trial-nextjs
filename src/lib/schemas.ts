@@ -36,10 +36,10 @@ export const globalDataSchema = z.object({
     leftMenu: z.array(linkSchema.extend({ id: z.number() })),
     rightMenu: z.array(linkSchema.extend({ id: z.number() })),
     cta: linkSchema,
-    siteRepresentation: z.object({
-      logo: imageSchema,
-      socialChannels: z.array(socialItemSchema),
-    }),
+  }),
+  siteRepresentation: z.object({
+    logo: imageSchema,
+    socialChannels: z.array(socialItemSchema),
   }),
 });
 

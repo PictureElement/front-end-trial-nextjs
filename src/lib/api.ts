@@ -1,3 +1,6 @@
+import { globalDataSchema } from "./schemas";
+import { homeDataSchema } from "./schemas";
+
 export async function fetchGlobal() {
   const response = await fetch(`${process.env.NEXT_PUBLIC_WEBSITE}/api/global`, {
     cache: "no-store",
@@ -5,7 +8,13 @@ export async function fetchGlobal() {
   if (!response.ok) {
     throw new Error("Failed to fetch global data");
   }
-  return response.json();
+  const data = await response.json();
+  const parsedData = globalDataSchema.safeParse(data);
+  console.log("Parsed global data:", parsedData);
+  if (!parsedData.success) {
+    throw new Error("Invalid global data format");
+  }
+  return parsedData.data;
 }
 
 export async function fetchHome() {
@@ -15,5 +24,10 @@ export async function fetchHome() {
   if (!response.ok) {
     throw new Error("Failed to fetch home data");
   }
-  return response.json();
+  const data = await response.json();
+  const parsedData = homeDataSchema.safeParse(data);
+  if (!parsedData.success) {
+    throw new Error("Invalid home data format");
+  }
+  return parsedData.data;
 }

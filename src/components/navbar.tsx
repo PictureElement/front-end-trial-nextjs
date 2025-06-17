@@ -1,8 +1,15 @@
 "use client";
 
+import { z } from "zod/v4";
+import { globalDataSchema } from "@/lib/schemas";
 import Link from "next/link";
 
-export function Navbar({ globalData }) {
+type GlobalData = z.infer<typeof globalDataSchema>;
+type Props = {
+  globalData: GlobalData;
+};
+
+export function Navbar({ globalData }: Props) {
   return (
     <nav className="grid grid-cols-5">
       <div className="border">
