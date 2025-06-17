@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
+import { Navbar } from "@/components/navbar";
 
 const roboto = Roboto({
   weight: 'variable',
@@ -23,6 +24,7 @@ export default function RootLayout({
       <body
         className={`${roboto.variable} antialiased`}
       >
+        <Navbar />
         {children}
       </body>
     </html>
