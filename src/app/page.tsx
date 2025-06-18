@@ -1,5 +1,6 @@
 import { fetchHome } from "@/lib/api";
 import { Hero } from "@/components/hero";
+import { About } from "@/components/about";
 import { ErrorMessage } from "@/components/error-message";
 
 export default async function Home() {
@@ -23,6 +24,7 @@ export default async function Home() {
       ) : (
         <>
           {homeData && <Hero homeData={homeData} />}
+          {homeData && <About homeData={homeData} />}
         </>
       )}
     </div>
