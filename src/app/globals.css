@@ -1,5 +1,18 @@
 @import "tailwindcss";
 
+:root {
+  --swiper-pagination-color: var(--color-primary);
+  --swiper-navigation-color: var(--color-primary);
+  --swiper-pagination-bullet-size: 16px;
+  --swiper-pagination-bullet-width: 16px;
+  --swiper-pagination-bullet-height: 16px;
+  --swiper-pagination-bullet-inactive-color: #000;
+  --swiper-pagination-bullet-inactive-opacity: 0.2;
+  --swiper-pagination-bullet-opacity: 1;
+  --swiper-pagination-bullet-horizontal-gap: 8px;
+  --swiper-pagination-bullet-vertical-gap: 8px;
+}
+
 @theme {
   --color-primary: #D4B254;
 }

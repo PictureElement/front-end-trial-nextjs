@@ -25,8 +25,10 @@ export function BtnContained(props: LinkProps) {
         inline-flex
         justify-center
         items-center
-        px-[57px]
-        h-15
+        px-10
+        md:px-14
+        h-10
+        md:h-15
         leading-none
         rounded-[30px]
       text-black
@@ -35,7 +37,6 @@ export function BtnContained(props: LinkProps) {
         hover:brightness-105
         focus:ring-2
         focus:outline-none
-        w-full sm:w-auto
         uppercase
         ${className ?? ""}
       `}

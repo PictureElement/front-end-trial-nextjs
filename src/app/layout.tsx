@@ -37,7 +37,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
           <ErrorMessage message="Error loading global data" />
         ) : (
           <>
-            {globalData && <Navbar globalData={globalData} />}
+            {/* {globalData && <Navbar globalData={globalData} />} */}
             {children}
           </>
         )}
