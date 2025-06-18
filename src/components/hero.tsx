@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/css';
 import { homeDataSchema } from "@/lib/schemas";
-import { BtnPrimary } from "./btn-primary";
+import { BtnContained } from "./btn-contained";
 
 type HomeData = z.infer<typeof homeDataSchema>;
 type Props = {
@@ -32,7 +32,7 @@ export function Hero({ homeData }: Props) {
             alt={slide.image.alternativeText}
             priority
           />
-          <BtnPrimary
+          <BtnContained
             label={slide.cta.label}
             url={slide.cta.url}
             openLinkInNewTab={slide.cta.openLinkInNewTab}

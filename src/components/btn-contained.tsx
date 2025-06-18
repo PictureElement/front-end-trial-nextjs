@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { linkSchema } from "@/lib/schemas";
 import z from "zod/v4";
-import { DynamicIcon } from 'lucide-react/dynamic';
+// import { DynamicIcon } from 'lucide-react/dynamic';
 
 type LinkProps = z.infer<typeof linkSchema> & React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
-export function BtnPrimary(props: LinkProps) {
+export function BtnContained(props: LinkProps) {
   const {
     label,
     url,
@@ -28,21 +28,23 @@ export function BtnPrimary(props: LinkProps) {
         px-[57px]
         h-15
         leading-none
-        rounded-full
+        rounded-[30px]
       text-black
         transition
       bg-primary
-        hover:brightness-90
-        focus:ring-4
+        hover:brightness-105
+        focus:ring-2
         focus:outline-none
+        w-full sm:w-auto
+        uppercase
         ${className ?? ""}
       `}
       {...rest}
     >
       {label}
-      {showIcon && lucideIconName && (
-        <DynamicIcon className="h-[1em] w-[1em] ms-1" name={lucideIconName} size={16} />
-      )}
+      {/* {showIcon && lucideIconName && (
+        <DynamicIcon className="h-[1em] w-[1em] ms-1" name={lucideIconName} />
+      )} */}
     </Link>
   );
 }

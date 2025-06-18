@@ -43,7 +43,7 @@ export async function GET() {
         url: ".",
         openLinkInNewTab: false,
         showIcon: true,
-        lucideIconName: "ShoppingCart",
+        lucideIconName: "shopping-cart",
       }
     },
     siteRepresentation: {
