@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { linkSchema } from "@/lib/schemas";
 import z from "zod/v4";
-// import { DynamicIcon } from 'lucide-react/dynamic';
+import { DynamicIcon } from 'lucide-react/dynamic';
 
 type LinkProps = z.infer<typeof linkSchema> & React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
